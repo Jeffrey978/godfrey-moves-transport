@@ -537,8 +537,13 @@ img {
   padding: 96px 0;
 }
 
-.section-heading.invert p:last-child {
-  color: rgba(255, 255, 255, 0.64);
+.growth-section .section-heading h2 {
+  color: var(--white);
+}
+
+.growth-section .kicker,
+.section-heading.on-dark p:last-child {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .roadmap {

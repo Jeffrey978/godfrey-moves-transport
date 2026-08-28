@@ -208,7 +208,7 @@ export default function Home() {
       </section>
 
       <section className="growth-section" id="growth">
-        <div className="section-heading invert">
+        <div className="section-heading on-dark">
           <p className="kicker">Growth plan</p>
           <h2>From one corridor to a national network.</h2>
           <p>
