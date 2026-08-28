@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ThemeToggle } from "./ThemeToggle";
 
 const routeStops = [
   "Igrita",
@@ -79,12 +80,15 @@ export default function Home() {
             </span>
           </a>
 
-          <nav className="nav-links" aria-label="Primary navigation">
-            <a href="#route">Route</a>
-            <a href="#standard">Standard</a>
-            <a href="#growth">Growth</a>
-            <a href="#partner">Partner</a>
-          </nav>
+          <div className="nav-actions">
+            <nav className="nav-links" aria-label="Primary navigation">
+              <a href="#route">Route</a>
+              <a href="#standard">Standard</a>
+              <a href="#growth">Growth</a>
+              <a href="#partner">Partner</a>
+            </nav>
+            <ThemeToggle />
+          </div>
         </header>
 
         <div className="hero-content">

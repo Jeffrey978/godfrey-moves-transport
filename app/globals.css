@@ -32,6 +32,9 @@ body {
   color: var(--white);
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 0;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease;
 }
 
 a {
@@ -122,6 +125,12 @@ img {
   font-size: 0.9rem;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .nav-links a {
   border-bottom: 1px solid transparent;
   padding-bottom: 5px;
@@ -130,6 +139,70 @@ img {
 .nav-links a:hover {
   color: var(--white);
   border-color: rgba(255, 255, 255, 0.72);
+}
+
+.theme-toggle {
+  height: 44px;
+  min-width: 106px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--white);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px 4px 4px;
+  text-transform: capitalize;
+}
+
+.theme-toggle-track {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--black);
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.theme-toggle-glyph {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: relative;
+}
+
+html[data-theme="dark"] .theme-toggle-glyph {
+  background: transparent;
+  box-shadow: inset -5px -2px 0 0 currentColor;
+}
+
+html[data-theme="light"] .theme-toggle-glyph {
+  background: currentColor;
+  box-shadow:
+    0 -8px 0 -6px currentColor,
+    0 8px 0 -6px currentColor,
+    8px 0 0 -6px currentColor,
+    -8px 0 0 -6px currentColor;
+}
+
+.theme-toggle-label {
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+html[data-theme="dark"] .theme-toggle-label::before {
+  content: "Dark";
+}
+
+html[data-theme="light"] .theme-toggle-label::before {
+  content: "Light";
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
 }
 
 .hero-content {
@@ -664,6 +737,19 @@ img {
     display: none;
   }
 
+  .theme-toggle {
+    min-width: 44px;
+    padding-right: 4px;
+  }
+
+  .theme-toggle-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
   .hero {
     min-height: 84svh;
   }
@@ -752,4 +838,111 @@ img {
   .signal strong {
     font-size: 1.85rem;
   }
+}
+
+html[data-theme="light"] body {
+  background: #f7f5f0;
+  color: var(--ink);
+}
+
+html[data-theme="light"] .hero {
+  background: #f7f5f0;
+  color: var(--ink);
+}
+
+html[data-theme="light"] .hero-media {
+  opacity: 0.2;
+  filter: grayscale(1) contrast(1.08);
+}
+
+html[data-theme="light"] .hero-shade {
+  background:
+    linear-gradient(90deg, rgba(247, 245, 240, 0.98) 0%, rgba(247, 245, 240, 0.86) 48%, rgba(247, 245, 240, 0.54) 82%),
+    linear-gradient(0deg, rgba(247, 245, 240, 0.96) 0%, rgba(247, 245, 240, 0.18) 46%);
+}
+
+html[data-theme="light"] .brand-mark {
+  border-color: rgba(0, 0, 0, 0.42);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme="light"] .brand small,
+html[data-theme="light"] .nav-links,
+html[data-theme="light"] .kicker,
+html[data-theme="light"] .hero-copy,
+html[data-theme="light"] .hero-strip {
+  color: rgba(0, 0, 0, 0.68);
+}
+
+html[data-theme="light"] .nav-links a:hover {
+  color: var(--ink);
+  border-color: rgba(0, 0, 0, 0.55);
+}
+
+html[data-theme="light"] .theme-toggle {
+  border-color: rgba(0, 0, 0, 0.22);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink);
+}
+
+html[data-theme="light"] .theme-toggle-track {
+  background: var(--ink);
+  color: var(--white);
+}
+
+html[data-theme="light"] .button.primary {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+}
+
+html[data-theme="light"] .button.ghost {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.56);
+  border-color: rgba(0, 0, 0, 0.22);
+}
+
+html[data-theme="light"] .hero-strip {
+  border-color: rgba(0, 0, 0, 0.16);
+}
+
+html[data-theme="light"] .hero-strip span {
+  border-color: rgba(0, 0, 0, 0.14);
+}
+
+html[data-theme="light"] .standard-section,
+html[data-theme="light"] .growth-section {
+  background: #ffffff;
+  color: var(--ink);
+}
+
+html[data-theme="light"] .split-copy p:last-child,
+html[data-theme="light"] .pillar p,
+html[data-theme="light"] .roadmap p,
+html[data-theme="light"] .section-heading.on-dark p:last-child {
+  color: rgba(0, 0, 0, 0.62);
+}
+
+html[data-theme="light"] .growth-section .section-heading h2 {
+  color: var(--ink);
+}
+
+html[data-theme="light"] .growth-section .kicker,
+html[data-theme="light"] .pillar span,
+html[data-theme="light"] .roadmap span {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="light"] .pillar,
+html[data-theme="light"] .roadmap article {
+  border-color: rgba(0, 0, 0, 0.12);
+  background: #f4f1ec;
+}
+
+html[data-theme="light"] .roadmap {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="light"] .footer {
+  color: rgba(0, 0, 0, 0.68);
 }

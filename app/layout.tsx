@@ -2,6 +2,23 @@ import { headers } from "next/headers";
 import type { Metadata } from "next";
 import "./globals.css";
 
+const themeScript = `
+(() => {
+  try {
+    const key = "gmt-theme";
+    const stored = window.localStorage.getItem(key);
+    const theme = stored === "light" || stored === "dark"
+      ? stored
+      : window.matchMedia("(prefers-color-scheme: light)").matches
+        ? "light"
+        : "dark";
+    document.documentElement.dataset.theme = theme;
+  } catch {
+    document.documentElement.dataset.theme = "dark";
+  }
+})();
+`;
+
 async function getSiteUrl() {
   const headersList = await headers();
   const host = headersList.get("host") ?? "localhost:3000";
@@ -55,7 +72,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );
