@@ -57,6 +57,11 @@ const roadmap = [
   ["Phase 4", "National network", "A trusted GMT route in major Nigerian cities."],
 ];
 
+const whatsappNumber = "2348138014084";
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+  "Hi Godfrey Moves Transport, I'd like to know more about your routes."
+)}`;
+
 export default function Home() {
   return (
     <main className="site-shell">
@@ -102,8 +107,13 @@ export default function Home() {
             <a className="button primary" href="#route">
               View pilot route
             </a>
-            <a className="button ghost" href="mailto:godfreyunite@gmail.com">
-              Partner with GMT
+            <a
+              className="button ghost"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chat on WhatsApp
             </a>
           </div>
         </div>
@@ -246,8 +256,16 @@ export default function Home() {
             <a className="button primary dark-button" href="mailto:godfreyunite@gmail.com">
               godfreyunite@gmail.com
             </a>
-            <a className="button line-button" href="tel:081380148084">
-              0813 8014 8084
+            <a
+              className="button whatsapp-button"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+            <a className="button line-button" href="tel:+2348138014084">
+              0813 801 4084
             </a>
           </div>
         </div>

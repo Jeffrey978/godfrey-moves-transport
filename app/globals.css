@@ -665,6 +665,12 @@ html[data-theme="light"] .theme-toggle-label::before {
   border-color: rgba(0, 0, 0, 0.28);
 }
 
+.whatsapp-button {
+  background: #128c7e;
+  color: var(--white);
+  border-color: #128c7e;
+}
+
 .footer {
   padding: 28px 0 36px;
   display: flex;
