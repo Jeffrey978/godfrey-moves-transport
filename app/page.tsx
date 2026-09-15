@@ -36,11 +36,11 @@ const valuePillars = [
 ];
 
 const farePreview = [
-  ["Rupokwu", "N500"],
-  ["New Road", "N550"],
-  ["Rumuokoro", "N600"],
-  ["Rumigbo", "N700"],
-  ["RSU Gate", "N1,100"],
+  ["Rupokwu", "₦500"],
+  ["New Road", "₦550"],
+  ["Rumuokoro", "₦600"],
+  ["Rumigbo", "₦700"],
+  ["RSU Gate", "₦1,100"],
 ];
 
 const operatingSignals = [
@@ -68,7 +68,7 @@ export default function Home() {
       <section className="hero" id="top" aria-label="Godfrey Moves Transport">
         <Image
           className="hero-media"
-          src="/og.png"
+          src="/og.webp"
           alt="Monochrome Godfrey Moves Transport bus and route map"
           fill
           priority
