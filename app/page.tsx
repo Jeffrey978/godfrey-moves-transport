@@ -78,7 +78,24 @@ export default function Home() {
 
         <header className="nav">
           <a className="brand" href="#top" aria-label="Godfrey Moves Transport home">
-            <span className="brand-mark">GM</span>
+            <span className="brand-mark">
+              <Image
+                className="brand-mark-img on-dark"
+                src="/mark-light.png"
+                alt=""
+                width={160}
+                height={57}
+                priority
+              />
+              <Image
+                className="brand-mark-img on-light"
+                src="/mark-dark.png"
+                alt=""
+                width={160}
+                height={57}
+                priority
+              />
+            </span>
             <span>
               Godfrey Moves
               <small>Transport Ltd</small>
@@ -89,6 +106,7 @@ export default function Home() {
             <nav className="nav-links" aria-label="Primary navigation">
               <a href="#route">Route</a>
               <a href="#standard">Standard</a>
+              <a href="#about">About</a>
               <a href="#growth">Growth</a>
               <a href="#partner">Partner</a>
             </nav>
@@ -195,6 +213,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="about-section" id="about">
+        <div className="about-inner">
+          <p className="kicker dark">About GMT</p>
+          <h2>Built by a rider, not a boardroom.</h2>
+          <div className="about-copy">
+            <p>
+              GMT started with a simple observation from years of commuting through Port
+              Harcourt: no fixed fares, no accountability, no dignity in the daily ride.
+              Godfrey Unite, GMT&apos;s founder, built the pilot route around what riders
+              actually experience, not around what looks good on paper.
+            </p>
+            <p>
+              The goal isn&apos;t just one clean bus. It&apos;s a standard: fixed pricing,
+              trained crews, and a company that treats every trip as a record, not a guess.
+              That standard is what&apos;s scaling next, starting with the fleet itself.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section className="operations-section">
         <div className="dashboard">
           <div className="dashboard-header">
@@ -272,14 +310,23 @@ export default function Home() {
       </section>
 
       <footer className="footer">
-        <a className="brand footer-brand" href="#top">
-          <span className="brand-mark">GM</span>
-          <span>
-            Godfrey Moves
-            <small>Port Harcourt, Nigeria</small>
-          </span>
+        <a className="footer-brand" href="#top" aria-label="Godfrey Moves Transport home">
+          <Image
+            className="footer-logo on-dark"
+            src="/logo-light.png"
+            alt="Godfrey Moves Transport Ltd"
+            width={640}
+            height={397}
+          />
+          <Image
+            className="footer-logo on-light"
+            src="/logo-dark.png"
+            alt="Godfrey Moves Transport Ltd"
+            width={640}
+            height={397}
+          />
         </a>
-        <p>Moving the World on Wheels.</p>
+        <p>Port Harcourt, Nigeria</p>
       </footer>
     </main>
   );

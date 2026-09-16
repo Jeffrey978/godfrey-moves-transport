@@ -109,6 +109,26 @@ img {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.brand-mark-img {
+  width: 30px;
+  height: auto;
+}
+
+/* The logo ships as two monochrome variants; show whichever suits the active
+   theme. Both are in the markup so the swap needs no JavaScript and survives
+   the pre-hydration theme script. */
+.on-light {
+  display: none;
+}
+
+html[data-theme="light"] .on-dark {
+  display: none;
+}
+
+html[data-theme="light"] .on-light {
+  display: block;
+}
+
 .brand small {
   display: block;
   margin-top: 4px;
@@ -299,10 +319,42 @@ html[data-theme="light"] .theme-toggle-label::before {
 }
 
 .route-section,
+.about-section,
 .operations-section,
 .partner-section {
   background: var(--bone);
   color: var(--ink);
+}
+
+.about-section {
+  padding: 96px 0;
+}
+
+.about-inner {
+  width: min(880px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.about-inner h2 {
+  margin: 14px 0 0;
+  font-size: 3.05rem;
+  line-height: 1.02;
+  font-weight: 900;
+}
+
+.about-copy {
+  margin-top: 30px;
+  display: grid;
+  gap: 20px;
+  border-left: 4px solid var(--ink);
+  padding-left: 28px;
+}
+
+.about-copy p {
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.78;
+  color: rgba(0, 0, 0, 0.72);
 }
 
 .route-section {
@@ -684,9 +736,14 @@ html[data-theme="light"] .theme-toggle-label::before {
   margin: 0;
 }
 
-.footer-brand .brand-mark {
-  width: 38px;
-  height: 38px;
+.footer-brand {
+  display: inline-block;
+  line-height: 0;
+}
+
+.footer-logo {
+  width: 168px;
+  height: auto;
 }
 
 @media (max-width: 980px) {
@@ -815,8 +872,17 @@ html[data-theme="light"] .theme-toggle-label::before {
   .section-heading h2,
   .split-copy h2,
   .dashboard h2,
+  .about-inner h2,
   .partner-section h2 {
     font-size: 2.22rem;
+  }
+
+  .about-section {
+    padding: 62px 0 70px;
+  }
+
+  .about-copy {
+    padding-left: 20px;
   }
 
   .route-map,
